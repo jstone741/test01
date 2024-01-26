@@ -1,0 +1,2021 @@
+<Vhosts>
+  <Vhost Name="health.gscdn.com" Status="Active">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>kr.object.ncloudstorage.com/ncp-origin-storage</Address>
+    </Origin>
+    <Listen>*:8080</Listen>
+    <Options>
+      <KeepAliveHeader Max="100"></KeepAliveHeader>
+      <TTL>
+        <Res2xx Max="31536000">31536000</Res2xx>
+      </TTL>
+      <AgeHeader>ON</AgeHeader>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+    <OriginOptions>
+      <UserAgent>*</UserAgent>
+      <Host>health.gscdn.com</Host>
+      <Exclusion>0</Exclusion>
+      <PartSize>0</PartSize>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+  </Vhost>
+<Vhost Name="qi-b.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.cnode.service1.gscdn.net</Address>
+      <Address>2-1st.cnode.service1.gscdn.net</Address>
+      <Address>3-1st.cnode.service1.gscdn.net</Address>
+      <Address>4-1st.cnode.service1.gscdn.net</Address>
+      <Address>5-1st.cnode.service1.gscdn.net</Address>
+      <Address>6-1st.cnode.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <PartSize>10</PartSize>
+      <Host>qi-b.qoo10cdn.com</Host>
+    </OriginOptions>
+    <Listen>*:8080</Listen>
+    <Options>
+      <AgeHeader>ON</AgeHeader>
+      <OriginalHeader>OFF</OriginalHeader>
+      <AcceptEncoding>OFF</AcceptEncoding>
+      <TTL>
+        <Res2xx Ratio="10" Max="21600">600</Res2xx>
+        <Res3xx>600</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <OptionsRequest>OFF</OptionsRequest>
+    </Options>
+  </Vhost>
+<Vhost Name="qi-o.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.cnode.service1.gscdn.net</Address>
+      <Address>2-1st.cnode.service1.gscdn.net</Address>
+      <Address>3-1st.cnode.service1.gscdn.net</Address>
+      <Address>4-1st.cnode.service1.gscdn.net</Address>
+      <Address>5-1st.cnode.service1.gscdn.net</Address>
+      <Address>6-1st.cnode.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <PartSize>10</PartSize>
+      <Host>qi-o.qoo10cdn.com</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <AgeHeader>ON</AgeHeader>
+      <ModifyHeader>ON</ModifyHeader>
+      <AcceptEncoding>OFF</AcceptEncoding>
+      <TTL>
+        <Res2xx Ratio="10" Max="43200">600</Res2xx>
+        <Res3xx>600</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <OptionsRequest>OFF</OptionsRequest>
+    </Options>
+  </Vhost>
+  <Vhost Name="wp.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>wp.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="image.wemakeprice.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>image.wemakeprice.com</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <ModifyHeader>ON</ModifyHeader>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+    <Alias>image2.wemakeprice.com</Alias>
+  </Vhost>
+  <Vhost Name="plusimage.wemakeprice.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>plusimage.wemakeprice.com</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="image-h2.wemakeprice.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>image-h2.wemakeprice.com</Host>
+      <URLRewrite>
+        <Pattern><![CDATA[^/(.*)\?quality=(.*)]]></Pattern>
+        <Replace><![CDATA[/#1/dims/quality/#2]]></Replace>
+      </URLRewrite>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="img.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="view01-stg.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>view01-stg.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="wp-stg.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>wp-stg.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="view01.wemep.co.kr" Status="Active" Volatile="OFF">
+    <VhostLink Condition="301,307,400,403,404">cdn-alt-vlink.wemep.co.kr</VhostLink>
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>view01.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl>ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="t-img1.wemep.co.kr" Status="Active" Volatile="OFF">
+    <VhostLink Condition="301,307,400,403,404">cdn-alt-vlink.wemep.co.kr</VhostLink>
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>t-img1.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <AccessControl>ON</AccessControl>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="t-img1-stg.wemep.co.kr" Status="Active" Volatile="OFF">
+    <VhostLink Condition="301,307,400,403,404">cdn-alt-vlink.wemep.co.kr</VhostLink>
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>t-img1-stg.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <AccessControl>ON</AccessControl>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="cdn-alt-vlink.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>cdn-alt-vlink.wemep.co.kr</Host>
+      <URLRewrite>
+        <Pattern><![CDATA[/(.*)]]></Pattern>
+        <Replace><![CDATA[/404.html]]></Replace>
+      </URLRewrite>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="s.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>s.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="review01.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>review01.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <AccessControl>ON</AccessControl>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+    <Alias>review02.wemep.co.kr</Alias>
+    <Alias>review03.wemep.co.kr</Alias>
+  </Vhost>
+  <Vhost Name="view01-h2-stg.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>view01-h2-stg.wemep.co.kr</Host>
+      <URLRewrite>
+        <Pattern><![CDATA[^/(.*)\?quality=(.*)]]></Pattern>
+        <Replace><![CDATA[/#1/dims/quality/#2]]></Replace>
+      </URLRewrite>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="view01-h2.wemep.co.kr" Status="Active" Volatile="OFF">
+    <VhostLink Condition="301,307,400,403,404">cdn-alt-vlink.wemep.co.kr</VhostLink>
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>view01-h2.wemep.co.kr</Host>
+      <URLRewrite>
+        <Pattern><![CDATA[^/(.*)\?quality=(.*)]]></Pattern>
+        <Replace><![CDATA[/#1/dims/quality/#2]]></Replace>
+      </URLRewrite>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="s-h2.wemep.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>s-h2.wemep.co.kr</Host>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Max="21600">21600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img1.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img1.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img2.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img2.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img3.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img3.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img4.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img4.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img5.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img5.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img6.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img6.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="th1.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>th1.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="th2.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>th2.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="th3.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>th3.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="th4.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>th4.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static1.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static1.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static2.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static2.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="thumb.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>thumb.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="tube.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>tube.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img1.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img1.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img2.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img2.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img3.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img3.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="img4.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>img4.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="imgtest.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>imgtest.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="mockup.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>mockup.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="image.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>image.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="tube.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>tube.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="image.ticketmonster.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>image.ticketmonster.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="imagec.ticketmonster.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>imagec.ticketmonster.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static1.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static1.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static2.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static2.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static2.ticketmonster.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static2.ticketmonster.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="static1.ticketmonster.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>static1.ticketmonster.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="cdnmedia.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>cdnmedia.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="lgcdnlive.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>lgcdnlive.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="cdnmediaimage.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>cdnmediaimage.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="cdnlivemedia.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>cdnlivemedia.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="thumb-tm.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>thumb-tm.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="thumb.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>thumb.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="feeddl.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>feeddl.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="thumb-tm.tmon.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>thumb-tm.tmon.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+ <Vhost Name="feed_edge.tmon.co.kr" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>feed_edge.tmon.co.kr</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_nocache,custom,cc_maxage,rescode,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+        <Res3xx>60</Res3xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <AccessControl DenialCode="403">ON</AccessControl>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="tm-ipx.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>tm-ipx.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">3153600</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqw-a.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw-a.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqw-b.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw-b.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqw.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi-a.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqi-a.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi-b.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqi-b.qoo10cdn.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi.qoo10cdn.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTPS">
+      <Address>01009-stqi.qoo10cdn.com</Address>
+    </Origin>
+    <OriginOptions>
+      <Host>01009-stqi.qoo10cdn.com</Host>
+      <Exclusion>0</Exclusion>
+    </OriginOptions>
+    <Sub Status="INACTIVE"/>
+    <Listen>*:80</Listen>
+    <Options>
+      <AgeHeader>ON</AgeHeader>
+      <Compression>ON</Compression>
+      <ApplyQueryString>ON</ApplyQueryString>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+      <OptionsRequest>OFF</OptionsRequest>
+    </Options>
+  </Vhost>
+  <Vhost Name="stqw-a.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw-a.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqw-b.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw-b.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqw.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqw.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stkr-a.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stkr-a.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stkr-b.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stkr-b.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stkr.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stkr.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi-a.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqi-a.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi-b.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqi-b.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+  <Vhost Name="stqi.image-gmkt.com" Status="Active" Volatile="OFF">
+    <Origin ByClient="OFF" Protocol="HTTP">
+      <Address>1-1st.qoo10.service1.gscdn.net</Address>
+      <Address>2-1st.qoo10.service1.gscdn.net</Address>
+      <Address>3-1st.qoo10.service1.gscdn.net</Address>
+      <Address>4-1st.qoo10.service1.gscdn.net</Address>
+      <Address>5-1st.qoo10.service1.gscdn.net</Address>
+      <Address>6-1st.qoo10.service1.gscdn.net</Address>
+    </Origin>
+    <OriginOptions>
+      <BalanceMode>HASH</BalanceMode>
+      <Host>stqi.image-gmkt.com</Host>
+      <ModifyHeader>ON</ModifyHeader>
+    </OriginOptions>
+    <Sub Status="INACTIVE"></Sub>
+    <Listen>*:8080</Listen>
+    <Options>
+      <ModifyHeader>ON</ModifyHeader>
+      <TTL Priority="cc_maxage,custom,rescode,cc_nocache,cc_nostore">
+        <Res2xx Ratio="0" Max="0">31536000</Res2xx>
+      </TTL>
+      <BypassPostRequest>ON</BypassPostRequest>
+    </Options>
+    <Log>
+      <Monitoring>OFF</Monitoring>
+    </Log>
+  </Vhost>
+</Vhosts>
