@@ -45,3 +45,4 @@ print(root[0][2])
 
 for child in root:
         print(child.tag, child.attrib)
+test
