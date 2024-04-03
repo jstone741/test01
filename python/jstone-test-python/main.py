@@ -1,16 +1,66 @@
-# This is a sample Python script.
+import boto3
+from botocore.config import Config
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+service_name = 's3'
+access_key = 'a1a59c6954024fe9ab45b7faa52d1e29'
+secret_key = 'edd0189cab4b47a09e92149da237ecd0'
+endpoint_url = 'http://storage.gscdn.com'
+region_name = 'us-east-1'
 
+my_config = Config(
+        signature_version='s3v4'
+)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+if __name__ == "__main__":
+        s3 = boto3.client(service_name, endpoint_url=endpoint_url, region_name=region_name, config=my_config, aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+        bucket_name = 'test'
 
+        # list all in the bucket
+        max_keys = 300
+        response = s3.list_objects(Bucket=bucket_name, MaxKeys=max_keys)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+        print('list all in the bucket')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        while True:
+                print('IsTruncated=%r' % response.get('IsTruncated'))
+                print('Marker=%s' % response.get('Marker'))
+                print('NextMarker=%s' % response.get('NextMarker'))
+
+                print('Object List')
+                for content in response.get('Contents'):
+                        print(' Name=%s, Size=%d, Owner=%s' % (content.get('Key'), content.get('Size'), content.get('Owner').get('ID')))
+
+                if response.get('IsTruncated'):
+                        response = s3.list_objects(Bucket=bucket_name, MaxKeys=max_keys,
+                        Marker=response.get('NextMarker'))
+                else:
+                        break
+
+        # top level folders and files in the bucket
+        delimiter = '/'
+        max_keys = 300
+
+        response = s3.list_objects(Bucket=bucket_name, Delimiter=delimiter, MaxKeys=max_keys)
+
+        print('top level folders and files in the bucket')
+
+        while True:
+                print('IsTruncated=%r' % response.get('IsTruncated'))
+                print('Marker=%s' % response.get('Marker'))
+                print('NextMarker=%s' % response.get('NextMarker'))
+
+                if response.get('CommonPrefixes') is not None:
+                        print('Folder List')
+                        for folder in response.get('CommonPrefixes'):
+                                print(' Name=%s' % folder.get('Prefix'))
+
+                if response.get('Contents') is not None:
+                        print('File List')
+                        for content in response.get('Contents'):
+                                print(' Name=%s, Size=%d, Owner=%s' % (content.get('Key'), content.get('Size'), content.get('Owner').get('ID')))
+
+                if response.get('IsTruncated'):
+                        response = s3.list_objects(Bucket=bucket_name, Delimiter=delimiter, MaxKeys=max_keys, Marker=response.get('NextMarker'))
+
+                else:
+                        break
